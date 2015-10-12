@@ -38,7 +38,7 @@ else
 	ARGV.each do |path|
 		if File.exist? path
 			puts "Loading #{path}..."
-			entries << Entry.load(path, since: options[:since], author: options[:author])
+			entries << Git::Timesheet::Entry.load(path, since: options[:since], author: options[:author])
 		end
 	end
 	
@@ -77,10 +77,10 @@ else
 		duration = (block.last.timestamp - block.first.timestamp) / 3600.0
 		total_hours += duration
 		
-		puts "For period #{block.first.timestamp} -> #{block.last.timestamp}: #{duration.round(2)} hours"
+		puts "For period #{block.first.timestamp} -> #{block.last.timestamp}: #{duration.round(2)} hours (#{block.first.timestamp.strftime("%A")})"
 		
 		block.each do |entry|
-			puts "\t#{entry.timestamp}: #{entry.message}"
+			puts "\t#{entry.timestamp}: #{entry.message} (#{entry.repository})"
 		end
 	end
 	

@@ -21,13 +21,15 @@
 module Git
 	module Timesheet
 		class Entry
-			def initialize(timestamp, message)
+			def initialize(timestamp, message, repository)
 				@timestamp = timestamp
 				@message = message
+				@repository = repository
 			end
 			
 			attr :timestamp
 			attr :message
+			attr :repository
 			
 			def <=> other
 				self.timestamp <=> other.timestamp
@@ -44,7 +46,7 @@ module Git
 					timestamp = Time.parse line.slice!(0,25)
 					message = line
 					
-					Entry.new(timestamp, message)
+					Entry.new(timestamp, message, git_root)
 				end
 			end
 		end
