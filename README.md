@@ -16,3 +16,4 @@ A tool to generate your timesheet from a git log. Put it in your `~/bin`!
 
 (c) 2011-2012 [Leonid Shevtsov](http://leonid.shevtsov.me)
 
+./git-timesheet.rb ../v1.geodev.co.nz -s "10 August"
