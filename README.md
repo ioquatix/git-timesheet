@@ -1,4 +1,4 @@
-# RubyDNS
+# Git Timesheet
 
 Generate a timesheet from one or more git repositories.
 
