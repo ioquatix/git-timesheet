@@ -24,12 +24,6 @@ Install it yourself as:
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-### Desired Features
-
-* Support for more features of DNS such as zone transfer.
-* Support reverse records more easily.
-* Some kind of system level integration, e.g. registering a DNS server with the currently running system resolver.
-
 ## License
 
 Released under the MIT license.
